@@ -1,0 +1,113 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:tns="http://www.daniel.belmonte.com/agenda-ws"
+targetNamespace="http://www.daniel.belmonte.com/agenda-ws"
+elementFormDefault="qualified">
+
+	<xs:element name="getContactByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="contactId" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getContactByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="contactType" type="tns:contactType" />
+				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="insertContactRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstName" type="xs:string" />
+				<xs:element name="lastName" type="xs:string" />
+				<xs:element name="address" type="xs:string" />
+				<xs:element name="postalCode" type="xs:string" />
+				<xs:element name="city" type="xs:string" />
+				<xs:element name="phone1" type="xs:string" />
+				<xs:element name="phone2" type="xs:string" />
+				<xs:element name="email1" type="xs:string" />
+				<xs:element name="email2" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="insertContactResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+				<xs:element name="contactType" type="tns:contactType"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="updateContactRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstName" type="xs:string" />
+				<xs:element name="lastName" type="xs:string" />
+				<xs:element name="address" type="xs:string" />
+				<xs:element name="postalCode" type="xs:string" />
+				<xs:element name="city" type="xs:string" />
+				<xs:element name="phone1" type="xs:string" />
+				<xs:element name="phone2" type="xs:string" />
+				<xs:element name="email1" type="xs:string" />
+				<xs:element name="email2" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="updateContactResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="updated" type="xs:boolean" />
+				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="deleteContactRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="contactId" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="deleteContactResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="deleted" type="xs:boolean" />
+				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="contactType">
+		<xs:sequence>
+			<xs:element name="contactId" type="xs:int" />
+			<xs:element name="firstName" type="xs:string" />
+			<xs:element name="lastName" type="xs:string" />
+			<xs:element name="address" type="xs:string" />
+			<xs:element name="postalCode" type="xs:string" />
+			<xs:element name="city" type="xs:string" />
+			<xs:element name="phone1" type="xs:string" />
+			<xs:element name="phone2" type="xs:string" />
+			<xs:element name="email1" type="xs:string" />
+			<xs:element name="email2" type="xs:string" />
+			<xs:element name="last_update" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="serviceStatus">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string"></xs:element>
+			<xs:element name="message" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
