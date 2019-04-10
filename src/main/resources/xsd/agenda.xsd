@@ -6,7 +6,7 @@ elementFormDefault="qualified">
 	<xs:element name="getContactByIdRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="contactId" type="xs:int"/>
+				<xs:element name="contact_id" type="xs:int"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -23,10 +23,10 @@ elementFormDefault="qualified">
 	<xs:element name="insertContactRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="firstName" type="xs:string" />
-				<xs:element name="lastName" type="xs:string" />
+				<xs:element name="first_name" type="xs:string" />
+				<xs:element name="last_name" type="xs:string" />
 				<xs:element name="address" type="xs:string" />
-				<xs:element name="postalCode" type="xs:string" />
+				<xs:element name="postal_code" type="xs:string" />
 				<xs:element name="city" type="xs:string" />
 				<xs:element name="phone1" type="xs:string" />
 				<xs:element name="phone2" type="xs:string" />
@@ -48,10 +48,10 @@ elementFormDefault="qualified">
 	<xs:element name="updateContactRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="firstName" type="xs:string" />
-				<xs:element name="lastName" type="xs:string" />
+				<xs:element name="first_name" type="xs:string" />
+				<xs:element name="last_name" type="xs:string" />
 				<xs:element name="address" type="xs:string" />
-				<xs:element name="postalCode" type="xs:string" />
+				<xs:element name="postal_code" type="xs:string" />
 				<xs:element name="city" type="xs:string" />
 				<xs:element name="phone1" type="xs:string" />
 				<xs:element name="phone2" type="xs:string" />
@@ -73,7 +73,7 @@ elementFormDefault="qualified">
 	<xs:element name="deleteContactRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="contactId" type="xs:int"/>
+				<xs:element name="contact_id" type="xs:int"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -89,11 +89,11 @@ elementFormDefault="qualified">
 
 	<xs:complexType name="contactType">
 		<xs:sequence>
-			<xs:element name="contactId" type="xs:int" />
-			<xs:element name="firstName" type="xs:string" />
-			<xs:element name="lastName" type="xs:string" />
+			<xs:element name="contact_id" type="xs:int" />
+			<xs:element name="first_name" type="xs:string" />
+			<xs:element name="last_name" type="xs:string" />
 			<xs:element name="address" type="xs:string" />
-			<xs:element name="postalCode" type="xs:string" />
+			<xs:element name="postal_code" type="xs:string" />
 			<xs:element name="city" type="xs:string" />
 			<xs:element name="phone1" type="xs:string" />
 			<xs:element name="phone2" type="xs:string" />

@@ -14,7 +14,7 @@ public class ContactEntityService implements ContactEntityInterface {
 	private ContactEntityRepository repository;
 	
 	public ContactEntityService() {
-		
+		System.out.println("CONSTRUCTOR DEL SERVICE");
 	}
 	
 	public ContactEntityService(ContactEntityRepository repository) {
@@ -23,10 +23,14 @@ public class ContactEntityService implements ContactEntityInterface {
 	
 	@Override
 	public ContactEntity getContactById(int id) {
-		try {
+		try{
+			System.out.println("ID EN EL SERVICE: " + id);
+			System.out.println("COUNT: " + this.repository.count());;
+			System.out.println("¿EXISTE? " + this.repository.existsById(id));
+			System.out.println("¿ENCONTRADO? " + this.repository.findById(id).isPresent());
 			return this.repository.findById(id).get();
 		}
-		catch(Exception e){
+		catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}

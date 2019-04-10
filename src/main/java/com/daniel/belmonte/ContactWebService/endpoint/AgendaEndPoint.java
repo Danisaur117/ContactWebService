@@ -30,6 +30,7 @@ public class AgendaEndPoint {
 	@ResponsePayload
 	GetContactByIdResponse getContactById(@RequestPayload GetContactByIdRequest request) {
 		GetContactByIdResponse response = new GetContactByIdResponse();
+		System.out.println("ID EN EL REQUEST: " + request.getContactId());
 		ContactType contactType = this.controller.getContactById(request.getContactId());
 		ServiceStatus serviceStatus = new ServiceStatus();
 		

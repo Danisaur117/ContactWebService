@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.10 a las 01:24:22 PM CEST 
+// Generado el: 2019.04.10 a las 05:48:26 PM CEST 
 //
 
 
@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="contactId" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="contact_id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="first_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="last_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="postalCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="postal_code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -62,14 +62,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ContactType {
 
+    @XmlElement(name = "contact_id")
     protected int contactId;
-    @XmlElement(required = true)
+    @XmlElement(name = "first_name", required = true)
     protected String firstName;
-    @XmlElement(required = true)
+    @XmlElement(name = "last_name", required = true)
     protected String lastName;
     @XmlElement(required = true)
     protected String address;
-    @XmlElement(required = true)
+    @XmlElement(name = "postal_code", required = true)
     protected String postalCode;
     @XmlElement(required = true)
     protected String city;
