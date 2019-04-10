@@ -23,7 +23,13 @@ public class ContactEntityService implements ContactEntityInterface {
 	
 	@Override
 	public ContactEntity getContactById(int id) {
-		return null;
+		try {
+			return this.repository.findById(id).get();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@Override
