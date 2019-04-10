@@ -15,7 +15,7 @@ elementFormDefault="qualified">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="contactType" type="tns:contactType" />
-				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+				<xs:element name="serviceStatus" type="tns:serviceStatus"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -39,8 +39,8 @@ elementFormDefault="qualified">
 	<xs:element name="insertContactResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
-				<xs:element name="contactType" type="tns:contactType"></xs:element>
+				<xs:element name="serviceStatus" type="tns:serviceStatus"/>
+				<xs:element name="contactType" type="tns:contactType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -65,7 +65,7 @@ elementFormDefault="qualified">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="updated" type="xs:boolean" />
-				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+				<xs:element name="serviceStatus" type="tns:serviceStatus"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -82,7 +82,7 @@ elementFormDefault="qualified">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="deleted" type="xs:boolean" />
-				<xs:element name="serviceStatus" type="tns:serviceStatus"></xs:element>
+				<xs:element name="serviceStatus" type="tns:serviceStatus"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -99,7 +99,7 @@ elementFormDefault="qualified">
 			<xs:element name="phone2" type="xs:string" />
 			<xs:element name="email1" type="xs:string" />
 			<xs:element name="email2" type="xs:string" />
-			<xs:element name="last_update" type="xs:dateTime" />
+			<xs:element name="last_update" type="xs:date" />
 		</xs:sequence>
 	</xs:complexType>
 	

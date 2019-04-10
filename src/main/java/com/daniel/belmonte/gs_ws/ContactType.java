@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.09 a las 05:21:36 PM CEST 
+// Generado el: 2019.04.10 a las 09:58:22 AM CEST 
 //
 
 
@@ -36,7 +36,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="email1" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="email2" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="last_update" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         &lt;element name="last_update" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -81,7 +81,7 @@ public class ContactType {
     @XmlElement(required = true)
     protected String email2;
     @XmlElement(name = "last_update", required = true)
-    @XmlSchemaType(name = "dateTime")
+    @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar lastUpdate;
 
     /**
