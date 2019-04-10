@@ -17,7 +17,6 @@ public class ContactController {
 	}
 	
 	public ContactType getContactById(int id) {
-		System.out.println("ID EN EL CONTROLLER: " + id);
 		ContactEntity contactEntity = service.getContactById(id);
 		ContactType contactType = new ContactType();
 		

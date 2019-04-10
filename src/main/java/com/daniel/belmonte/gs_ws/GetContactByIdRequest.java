@@ -49,7 +49,6 @@ public class GetContactByIdRequest {
      * 
      */
     public int getContactId() {
-    	System.out.println("GET_CONTACT_ID_REQUEST: " + contactId);
         return contactId;
     }
 
@@ -58,7 +57,6 @@ public class GetContactByIdRequest {
      * 
      */
     public void setContactId(int value) {
-    	System.out.println("SET_CONTACT_ID_REQUEST: " + value);
         this.contactId = value;
     }
 

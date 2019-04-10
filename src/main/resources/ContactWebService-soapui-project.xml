@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="0b70a570-61a0-43d7-b6af-c574c0a2b11d" activeEnvironment="Default" name="ContactWebService" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="442ccf44-ed54-4fec-b638-8e777936e0a8" wsaVersion="NONE" name="AgendaPortSoap11" type="wsdl" bindingName="{http://www.daniel.belmonte.com/agenda-ws}AgendaPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/agenda.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/agenda.wsdl"><con:part><con:url>http://localhost:8080/ws/agenda.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.daniel.belmonte.com/agenda-ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.daniel.belmonte.com/agenda-ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.daniel.belmonte.com/agenda-ws">
+<con:soapui-project id="0b70a570-61a0-43d7-b6af-c574c0a2b11d" activeEnvironment="Default" name="ContactWebService" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="442ccf44-ed54-4fec-b638-8e777936e0a8" wsaVersion="NONE" name="AgendaPortSoap11" type="wsdl" bindingName="{http://www.daniel.belmonte.com/agenda-ws}AgendaPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/agenda.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/agenda.wsdl"><con:part><con:url>http://localhost:8080/ws/agenda.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.daniel.belmonte.com/agenda-ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.daniel.belmonte.com/agenda-ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.daniel.belmonte.com/agenda-ws">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://www.daniel.belmonte.com/agenda-ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="getContactByIdRequest">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="contactId" type="xs:int"/>
+            <xs:element name="contact_id" type="xs:int"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -20,10 +20,10 @@
       <xs:element name="insertContactRequest">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
             <xs:element name="address" type="xs:string"/>
-            <xs:element name="postalCode" type="xs:string"/>
+            <xs:element name="postal_code" type="xs:string"/>
             <xs:element name="city" type="xs:string"/>
             <xs:element name="phone1" type="xs:string"/>
             <xs:element name="phone2" type="xs:string"/>
@@ -43,10 +43,10 @@
       <xs:element name="updateContactRequest">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
             <xs:element name="address" type="xs:string"/>
-            <xs:element name="postalCode" type="xs:string"/>
+            <xs:element name="postal_code" type="xs:string"/>
             <xs:element name="city" type="xs:string"/>
             <xs:element name="phone1" type="xs:string"/>
             <xs:element name="phone2" type="xs:string"/>
@@ -66,7 +66,7 @@
       <xs:element name="deleteContactRequest">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="contactId" type="xs:int"/>
+            <xs:element name="contact_id" type="xs:int"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -80,11 +80,11 @@
       </xs:element>
       <xs:complexType name="contactType">
         <xs:sequence>
-          <xs:element name="contactId" type="xs:int"/>
-          <xs:element name="firstName" type="xs:string"/>
-          <xs:element name="lastName" type="xs:string"/>
+          <xs:element name="contact_id" type="xs:int"/>
+          <xs:element name="first_name" type="xs:string"/>
+          <xs:element name="last_name" type="xs:string"/>
           <xs:element name="address" type="xs:string"/>
-          <xs:element name="postalCode" type="xs:string"/>
+          <xs:element name="postal_code" type="xs:string"/>
           <xs:element name="city" type="xs:string"/>
           <xs:element name="phone1" type="xs:string"/>
           <xs:element name="phone2" type="xs:string"/>
@@ -187,48 +187,48 @@
       <soap:address location="http://localhost:8080/ws"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="426376bd-2441-4e5f-9f18-cb71697ad620" isOneWay="false" action="" name="deleteContact" bindingOperationName="deleteContact" type="Request-Response" outputName="deleteContactResponse" inputName="deleteContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a9b89336-4be8-4f70-83fa-8f15615e6cea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <agen:deleteContactRequest>\r
-         <agen:contactId>?</agen:contactId>\r
-      </agen:deleteContactRequest>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/deleteContactRequest"/></con:call></con:operation><con:operation id="cdf9e147-4c7a-4d74-876a-a5aae9ad4da4" isOneWay="false" action="" name="getContactById" bindingOperationName="getContactById" type="Request-Response" outputName="getContactByIdResponse" inputName="getContactByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91ea25e3-03b6-40b1-82c3-28b6026712e1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <agen:getContactByIdRequest>\r
-         <agen:contactId>1</agen:contactId>\r
-      </agen:getContactByIdRequest>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/getContactByIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="baecda0c-3baf-4a45-896f-6368ff26b6f5" isOneWay="false" action="" name="insertContact" bindingOperationName="insertContact" type="Request-Response" outputName="insertContactResponse" inputName="insertContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="63d3d0c0-d193-4031-b666-dbabd311fbac" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <agen:insertContactRequest>\r
-         <agen:firstName>?</agen:firstName>\r
-         <agen:lastName>?</agen:lastName>\r
-         <agen:address>?</agen:address>\r
-         <agen:postalCode>?</agen:postalCode>\r
-         <agen:city>?</agen:city>\r
-         <agen:phone1>?</agen:phone1>\r
-         <agen:phone2>?</agen:phone2>\r
-         <agen:email1>?</agen:email1>\r
-         <agen:email2>?</agen:email2>\r
-      </agen:insertContactRequest>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/insertContactRequest"/></con:call></con:operation><con:operation id="5a6a7cef-af69-47d6-afbc-e6f78c289b51" isOneWay="false" action="" name="updateContact" bindingOperationName="updateContact" type="Request-Response" outputName="updateContactResponse" inputName="updateContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b903e835-d870-434f-9cb5-aeb745fcbc15" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <agen:updateContactRequest>\r
-         <agen:firstName>?</agen:firstName>\r
-         <agen:lastName>?</agen:lastName>\r
-         <agen:address>?</agen:address>\r
-         <agen:postalCode>?</agen:postalCode>\r
-         <agen:city>?</agen:city>\r
-         <agen:phone1>?</agen:phone1>\r
-         <agen:phone2>?</agen:phone2>\r
-         <agen:email1>?</agen:email1>\r
-         <agen:email2>?</agen:email2>\r
-      </agen:updateContactRequest>\r
-   </soapenv:Body>\r
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="426376bd-2441-4e5f-9f18-cb71697ad620" isOneWay="false" action="" name="deleteContact" bindingOperationName="deleteContact" type="Request-Response" outputName="deleteContactResponse" inputName="deleteContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a9b89336-4be8-4f70-83fa-8f15615e6cea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:deleteContactRequest>
+         <agen:contact_id>?</agen:contact_id>
+      </agen:deleteContactRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/deleteContactRequest"/></con:call></con:operation><con:operation id="cdf9e147-4c7a-4d74-876a-a5aae9ad4da4" isOneWay="false" action="" name="getContactById" bindingOperationName="getContactById" type="Request-Response" outputName="getContactByIdResponse" inputName="getContactByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91ea25e3-03b6-40b1-82c3-28b6026712e1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:getContactByIdRequest>
+         <agen:contact_id>1</agen:contact_id>
+      </agen:getContactByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/getContactByIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="baecda0c-3baf-4a45-896f-6368ff26b6f5" isOneWay="false" action="" name="insertContact" bindingOperationName="insertContact" type="Request-Response" outputName="insertContactResponse" inputName="insertContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="63d3d0c0-d193-4031-b666-dbabd311fbac" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:insertContactRequest>
+         <agen:first_name>?</agen:first_name>
+         <agen:last_name>?</agen:last_name>
+         <agen:address>?</agen:address>
+         <agen:postal_code>?</agen:postal_code>
+         <agen:city>?</agen:city>
+         <agen:phone1>?</agen:phone1>
+         <agen:phone2>?</agen:phone2>
+         <agen:email1>?</agen:email1>
+         <agen:email2>?</agen:email2>
+      </agen:insertContactRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/insertContactRequest"/></con:call></con:operation><con:operation id="5a6a7cef-af69-47d6-afbc-e6f78c289b51" isOneWay="false" action="" name="updateContact" bindingOperationName="updateContact" type="Request-Response" outputName="updateContactResponse" inputName="updateContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b903e835-d870-434f-9cb5-aeb745fcbc15" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:updateContactRequest>
+         <agen:first_name>?</agen:first_name>
+         <agen:last_name>?</agen:last_name>
+         <agen:address>?</agen:address>
+         <agen:postal_code>?</agen:postal_code>
+         <agen:city>?</agen:city>
+         <agen:phone1>?</agen:phone1>
+         <agen:phone2>?</agen:phone2>
+         <agen:email1>?</agen:email1>
+         <agen:email2>?</agen:email2>
+      </agen:updateContactRequest>
+   </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/updateContactRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

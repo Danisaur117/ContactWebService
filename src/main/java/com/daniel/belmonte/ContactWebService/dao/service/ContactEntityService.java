@@ -2,6 +2,7 @@ package com.daniel.belmonte.ContactWebService.dao.service;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.daniel.belmonte.ContactWebService.dao.entity.ContactEntity;
@@ -11,10 +12,11 @@ import com.daniel.belmonte.ContactWebService.dao.repository.ContactEntityReposit
 @Service
 @Transactional
 public class ContactEntityService implements ContactEntityInterface {
+	@Autowired
 	private ContactEntityRepository repository;
 	
 	public ContactEntityService() {
-		System.out.println("CONSTRUCTOR DEL SERVICE");
+		
 	}
 	
 	public ContactEntityService(ContactEntityRepository repository) {
@@ -24,14 +26,10 @@ public class ContactEntityService implements ContactEntityInterface {
 	@Override
 	public ContactEntity getContactById(int id) {
 		try{
-			System.out.println("ID EN EL SERVICE: " + id);
-			System.out.println("COUNT: " + this.repository.count());;
-			System.out.println("¿EXISTE? " + this.repository.existsById(id));
-			System.out.println("¿ENCONTRADO? " + this.repository.findById(id).isPresent());
 			return this.repository.findById(id).get();
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 	}
