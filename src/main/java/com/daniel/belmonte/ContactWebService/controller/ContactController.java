@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import com.daniel.belmonte.ContactWebService.dao.entity.ContactEntity;
 import com.daniel.belmonte.ContactWebService.dao.interfaces.ContactEntityInterface;
 import com.daniel.belmonte.gs_ws.ContactType;
+import com.daniel.belmonte.gs_ws.InsertContactRequest;
 
 @Controller
 public class ContactController {
@@ -37,8 +38,29 @@ public class ContactController {
 		return contactType;
 	}
 	
-	public ContactEntity insertContact(ContactEntity contactEntity) {
-		return null;
+	public ContactType insertContact(InsertContactRequest request) {
+		ContactEntity contactEntity
+			= new ContactEntity(request.getFirstName(), request.getLastName(), request.getAddress(),
+								request.getPostalCode(), request.getCity(), request.getPhone1(),
+								request.getPhone2(), request.getEmail1(), request.getEmail2());
+		ContactType contactType = new ContactType();
+		ContactEntity saved = service.insertContact(contactEntity);
+		
+		if(saved == null) return null;
+		
+		contactType.setContactId(saved.getContactId());
+		contactType.setFirstName(saved.getFirstName());
+		contactType.setLastName(saved.getLastName());
+		contactType.setAddress(saved.getAddress());
+		contactType.setPostalCode(saved.getPostalCode());
+		contactType.setCity(saved.getCity());
+		contactType.setPhone1(saved.getPhone1());
+		contactType.setPhone2(saved.getPhone2());
+		contactType.setEmail1(saved.getEmail1());
+		contactType.setEmail2(saved.getEmail2());
+		contactType.setLastUpdate(saved.getLastUpdate());
+
+		return contactType;
 	}
 	
 	public boolean updateContact(ContactEntity contactEntity) {

@@ -45,6 +45,7 @@ public class ContactEntity implements Serializable {
 		this.phone2 = phone2;
 		this.email1 = email1;
 		this.email2 = email2;
+		this.lastUpdate = new Date();
 	}
 	
 	public int getContactId() {

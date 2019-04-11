@@ -10,6 +10,8 @@ import com.daniel.belmonte.ContactWebService.controller.ContactController;
 import com.daniel.belmonte.gs_ws.ContactType;
 import com.daniel.belmonte.gs_ws.GetContactByIdRequest;
 import com.daniel.belmonte.gs_ws.GetContactByIdResponse;
+import com.daniel.belmonte.gs_ws.InsertContactRequest;
+import com.daniel.belmonte.gs_ws.InsertContactResponse;
 import com.daniel.belmonte.gs_ws.ServiceStatus;
 
 @Endpoint
@@ -48,6 +50,32 @@ public class AgendaEndPoint {
 		
 		response.setServiceStatus(serviceStatus);
 		response.setContactType(contactType);
+		
+		return response;
+	}
+	
+	@PayloadRoot(namespace=NAMESPACE_URI, localPart="insertContactRequest")
+	@ResponsePayload
+	InsertContactResponse insertContact(@RequestPayload InsertContactRequest request) {
+		InsertContactResponse response = new InsertContactResponse();
+		ContactType contactType = this.controller.insertContact(request);
+		ServiceStatus serviceStatus = new ServiceStatus();
+		
+		response.setContactType(contactType);
+		
+		if(contactType == null) {
+			serviceStatus.setStatusCode("CONFLICT");
+			serviceStatus.setMessage("Error al añadir la entidad");
+			
+			response.setServiceStatus(serviceStatus);
+			
+			return response;
+		}
+		
+		serviceStatus.setStatusCode("SUCCESS");
+		serviceStatus.setMessage("Entidad añadida correctamente");
+		
+		response.setServiceStatus(serviceStatus);
 		
 		return response;
 	}

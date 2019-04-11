@@ -36,7 +36,13 @@ public class ContactEntityService implements ContactEntityInterface {
 	
 	@Override
 	public ContactEntity insertContact(ContactEntity contactEntity) {
-		return null;
+		try {
+			return this.repository.save(contactEntity);
+		}
+		catch(Exception e) {
+			//e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@Override
