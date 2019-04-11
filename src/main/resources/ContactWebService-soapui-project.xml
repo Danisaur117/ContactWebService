@@ -217,20 +217,20 @@
          <agen:email2></agen:email2>
       </agen:insertContactRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/insertContactRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5a6a7cef-af69-47d6-afbc-e6f78c289b51" isOneWay="false" action="" name="updateContact" bindingOperationName="updateContact" type="Request-Response" outputName="updateContactResponse" inputName="updateContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b903e835-d870-434f-9cb5-aeb745fcbc15" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/insertContactRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5a6a7cef-af69-47d6-afbc-e6f78c289b51" isOneWay="false" action="" name="updateContact" bindingOperationName="updateContact" type="Request-Response" outputName="updateContactResponse" inputName="updateContactRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b903e835-d870-434f-9cb5-aeb745fcbc15" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://www.daniel.belmonte.com/agenda-ws">
    <soapenv:Header/>
    <soapenv:Body>
       <agen:updateContactRequest>
-         <agen:contact_id>?</agen:contact_id>
-         <agen:first_name>?</agen:first_name>
-         <agen:last_name>?</agen:last_name>
-         <agen:address>?</agen:address>
-         <agen:postal_code>?</agen:postal_code>
-         <agen:city>?</agen:city>
-         <agen:phone1>?</agen:phone1>
+         <agen:contact_id>4</agen:contact_id>
+         <agen:first_name>PETER</agen:first_name>
+         <agen:last_name>GRIFFIN</agen:last_name>
+         <agen:address>PADRE DE FAMILIA 13</agen:address>
+         <agen:postal_code>13123</agen:postal_code>
+         <agen:city>QUAHOG</agen:city>
+         <agen:phone1>555559966</agen:phone1>
          <agen:phone2>?</agen:phone2>
-         <agen:email1>?</agen:email1>
+         <agen:email1>peter.griffin@padre.de.familia.com</agen:email1>
          <agen:email2>?</agen:email2>
       </agen:updateContactRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/updateContactRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.daniel.belmonte.com/agenda-ws/AgendaPort/updateContactRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

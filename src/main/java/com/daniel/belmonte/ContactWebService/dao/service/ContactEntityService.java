@@ -59,6 +59,13 @@ public class ContactEntityService implements ContactEntityInterface {
 	
 	@Override
 	public boolean deleteContact(int id) {
-		return false;
+		try {
+			this.repository.deleteById(id);
+			return true;
+		}
+		catch(Exception e) {
+			//e.printStackTrace();
+			return false;
+		}
 	}
 }

@@ -8,6 +8,8 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.daniel.belmonte.ContactWebService.controller.ContactController;
 import com.daniel.belmonte.gs_ws.ContactType;
+import com.daniel.belmonte.gs_ws.DeleteContactRequest;
+import com.daniel.belmonte.gs_ws.DeleteContactResponse;
 import com.daniel.belmonte.gs_ws.GetContactByIdRequest;
 import com.daniel.belmonte.gs_ws.GetContactByIdResponse;
 import com.daniel.belmonte.gs_ws.InsertContactRequest;
@@ -114,6 +116,42 @@ public class AgendaEndPoint {
 		
 		response.setUpdated(true);
 		response.setServiceStatus(serviceStatus);
+		
+		return response;
+	}
+	
+	@PayloadRoot(namespace=NAMESPACE_URI, localPart="deleteContactRequest")
+	@ResponsePayload
+	public DeleteContactResponse deleteContact(@RequestPayload DeleteContactRequest request) {
+		DeleteContactResponse response = new DeleteContactResponse();
+		Boolean deleted = this.controller.deleteContact(request.getContactId());
+		ServiceStatus serviceStatus = new ServiceStatus();
+
+		if(deleted == null) {
+			serviceStatus.setStatusCode("NOT FOUND");
+			serviceStatus.setMessage("Error al buscar la entidad");
+			
+			response.setServiceStatus(serviceStatus);
+			response.setDeleted(false);
+			
+			return response;
+		}
+		
+		if(deleted == false) {
+			serviceStatus.setStatusCode("CONFLICT");
+			serviceStatus.setMessage("Error al borrar la entidad");
+			
+			response.setServiceStatus(serviceStatus);
+			response.setDeleted(deleted);
+			
+			return response;
+		}
+		
+		serviceStatus.setStatusCode("SUCCESS");
+		serviceStatus.setMessage("Entidad borrada correctamente");
+		
+		response.setServiceStatus(serviceStatus);
+		response.setDeleted(deleted);
 		
 		return response;
 	}

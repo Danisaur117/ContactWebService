@@ -86,7 +86,11 @@ public class ContactController {
 		return true;
 	}
 	
-	public boolean deleteContact(int id) {
-		return false;
+	public Boolean deleteContact(int id) {
+		ContactEntity contactEntity = service.getContactById(id);
+		
+		if(contactEntity == null) return null;
+		
+		return service.deleteContact(contactEntity.getContactId());
 	}
 }
