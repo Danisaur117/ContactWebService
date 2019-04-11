@@ -7,6 +7,7 @@ import com.daniel.belmonte.ContactWebService.dao.entity.ContactEntity;
 import com.daniel.belmonte.ContactWebService.dao.interfaces.ContactEntityInterface;
 import com.daniel.belmonte.gs_ws.ContactType;
 import com.daniel.belmonte.gs_ws.InsertContactRequest;
+import com.daniel.belmonte.gs_ws.UpdateContactRequest;
 
 @Controller
 public class ContactController {
@@ -63,8 +64,26 @@ public class ContactController {
 		return contactType;
 	}
 	
-	public boolean updateContact(ContactEntity contactEntity) {
-		return false;
+	public Boolean updateContact(UpdateContactRequest request) {
+		ContactEntity contactEntity = service.getContactById(request.getContactId());
+		
+		if(contactEntity == null) return null;
+
+		contactEntity.setFirstName(request.getFirstName());
+		contactEntity.setLastName(request.getLastName());
+		contactEntity.setAddress(request.getAddress());
+		contactEntity.setPostalCode(request.getPostalCode());
+		contactEntity.setCity(request.getCity());
+		contactEntity.setPhone1(request.getPhone1());
+		contactEntity.setPhone2(request.getPhone2());
+		contactEntity.setEmail1(request.getEmail1());
+		contactEntity.setEmail2(request.getEmail2());
+		
+		boolean updated = service.updateContact(contactEntity);
+		
+		if(updated == false) return false;
+		
+		return true;
 	}
 	
 	public boolean deleteContact(int id) {

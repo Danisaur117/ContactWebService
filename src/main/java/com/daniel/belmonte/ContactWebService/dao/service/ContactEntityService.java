@@ -47,7 +47,14 @@ public class ContactEntityService implements ContactEntityInterface {
 	
 	@Override
 	public boolean updateContact(ContactEntity contactEntity) {
-		return false;
+		try {
+			this.repository.save(contactEntity);
+			return true;
+		}
+		catch(Exception e) {
+			//e.printStackTrace();
+			return false;
+		}
 	}
 	
 	@Override

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.04.10 a las 05:48:26 PM CEST 
+// Generado el: 2019.04.11 a las 04:33:12 PM CEST 
 //
 
 
@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="contact_id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="first_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="last_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -44,6 +45,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "contactId",
     "firstName",
     "lastName",
     "address",
@@ -57,6 +59,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "updateContactRequest")
 public class UpdateContactRequest {
 
+    @XmlElement(name = "contact_id")
+    protected int contactId;
     @XmlElement(name = "first_name", required = true)
     protected String firstName;
     @XmlElement(name = "last_name", required = true)
@@ -75,6 +79,22 @@ public class UpdateContactRequest {
     protected String email1;
     @XmlElement(required = true)
     protected String email2;
+
+    /**
+     * Obtiene el valor de la propiedad contactId.
+     * 
+     */
+    public int getContactId() {
+        return contactId;
+    }
+
+    /**
+     * Define el valor de la propiedad contactId.
+     * 
+     */
+    public void setContactId(int value) {
+        this.contactId = value;
+    }
 
     /**
      * Obtiene el valor de la propiedad firstName.

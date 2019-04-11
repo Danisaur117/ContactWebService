@@ -13,6 +13,8 @@ import com.daniel.belmonte.gs_ws.GetContactByIdResponse;
 import com.daniel.belmonte.gs_ws.InsertContactRequest;
 import com.daniel.belmonte.gs_ws.InsertContactResponse;
 import com.daniel.belmonte.gs_ws.ServiceStatus;
+import com.daniel.belmonte.gs_ws.UpdateContactRequest;
+import com.daniel.belmonte.gs_ws.UpdateContactResponse;
 
 @Endpoint
 public class AgendaEndPoint {
@@ -75,6 +77,42 @@ public class AgendaEndPoint {
 		serviceStatus.setStatusCode("SUCCESS");
 		serviceStatus.setMessage("Entidad añadida correctamente");
 		
+		response.setServiceStatus(serviceStatus);
+		
+		return response;
+	}
+	
+	@PayloadRoot(namespace=NAMESPACE_URI, localPart="updateContactRequest")
+	@ResponsePayload
+	public UpdateContactResponse updateContact(@RequestPayload UpdateContactRequest request) {
+		UpdateContactResponse response = new UpdateContactResponse();
+		Boolean updated = this.controller.updateContact(request);
+		ServiceStatus serviceStatus = new ServiceStatus();
+
+		if(updated == null) {
+			serviceStatus.setStatusCode("NOT FOUND");
+			serviceStatus.setMessage("Error al buscar la entidad");
+			
+			response.setUpdated(false);
+			response.setServiceStatus(serviceStatus);
+			
+			return response;
+		}
+		
+		if(updated == false) {
+			serviceStatus.setStatusCode("CONFLICT");
+			serviceStatus.setMessage("Error al actualizar la entidad");
+			
+			response.setUpdated(false);
+			response.setServiceStatus(serviceStatus);
+			
+			return response;
+		}
+		
+		serviceStatus.setStatusCode("SUCCESS");
+		serviceStatus.setMessage("Entidad actualizada correctamente");
+		
+		response.setUpdated(true);
 		response.setServiceStatus(serviceStatus);
 		
 		return response;

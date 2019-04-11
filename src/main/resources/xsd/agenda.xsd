@@ -48,6 +48,7 @@ elementFormDefault="qualified">
 	<xs:element name="updateContactRequest">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element name="contact_id" type="xs:int"/>
 				<xs:element name="first_name" type="xs:string" />
 				<xs:element name="last_name" type="xs:string" />
 				<xs:element name="address" type="xs:string" />
